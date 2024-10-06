@@ -1,0 +1,120 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.side-panel {
+    background-color: #333;
+    width: 200px;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+}
+
+.side-panel ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.side-panel ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.side-panel ul li a:hover {
+    color: #007BFF;
+
+}
+
+/* styling the content area  */
+.content {
+    flex: 1;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: #333;
+
+}
+
+.post {
+    background-color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.post h2 {
+    color: #007BFF;
+}
+
+.post p {
+    color: #666;
+}
+
+
+/* form container styling */
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    /* box-shadow: 0 2px 5px rgba(0,0,0,0.1); */
+}
+
+/* Individual form groups (label + input/text area ) */
+
+.form-group {
+    margin-bottom: 20px;
+
+}
+
+/* Styling the labels */
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Input field styling  */
+.form-group input[type="text"], .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Textarea specific styling */
+.form-group textarea {
+    height: 300px;
+    resize: vertical;
+}
+
+/* Button styling  */
+.btn-submit {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}

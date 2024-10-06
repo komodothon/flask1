@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Blog-home
+{% endblock %}
+
+{% block content %}
+    {% for post in posts %}
+        <div class="post">
+            <h2><a href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h2>
+            <p>{{ post.content }}</p>
+        </div>
+
+    {% else %}
+        <p>No blog posts yet!</p>
+
+    {% endfor %}
+
+{% endblock %}
