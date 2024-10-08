@@ -1,3 +1,10 @@
+DATABASE = path.join('instance', 'blog_db.db')
+
+def get_db():
+    if 'db' not in g:
+        g.db = sqlite3.connect(DATABASE)
+        g.db.row_factory = sqlite3.Row
+    return g.db
 @app.teardown_appcontext
 def close_db(exception):
     db = g.pop('db', None)
@@ -7,6 +14,17 @@ def close_db(exception):
 
 @app.route("/")
 def home():
+    db = get_db()
+    cursor = db.cursor()
+    cursor.execute("SELECT * FROM posts") 
+    
+    # if column names are unavailable, they can be acquired from .description
+    column_names = [desc[0] for desc in cursor.description]
+    
+    posts = cursor.fetchall()
+    # for post in session['posts']:
+    #     print(dict(post))
+    posts = [dict(post) for post in posts]
     return render_template("home.html", posts=posts)
 
 @app.route("/post/<int:post_id>")
