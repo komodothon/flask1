@@ -6,14 +6,15 @@
 
 {% block content %}
     <h1>Create a New Post</h1>
-    <form class="form-container" action="{{ url_for('new_post') }}" method="POST" >
+    
+    <form class="form-container" action="{{ url_for('new_post') }}" method="POST">
         <div class="form-group">
-            <label for="title" name="title">Title: </label>
+            <label for="title">Title: </label>
             <input id="title" autocomplete="off" autofocus type="text" name="title" required><br>
         </div>
 
         <div class="form-group">
-            <label for="content" name="content">Content: </label>
+            <label for="content">Content: </label>
             <textarea id="content" name="content" required></textarea><br>
     
         </div>

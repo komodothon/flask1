@@ -5,15 +5,19 @@
 {% endblock %}
 
 {% block content %}
-    {% for post in posts %}
-        <div class="post">
-            <h2><a href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h2>
-            <p>{{ post.content }}</p>
-        </div>
+    <div class="container-home">
+        {% for post in posts %}
+            <div class="post">
+                <h2><a href="{{ url_for('post', post_id=post.post_id) }}">{{ post.title }}</a></h2>
 
-    {% else %}
-        <p>No blog posts yet!</p>
+                <p>{{ post.content }}</p>
+            </div>
 
-    {% endfor %}
+        {% else %}
+            <p>No blog posts yet!</p>
+
+        {% endfor %}
+    </div>
+
 
 {% endblock %}
