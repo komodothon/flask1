@@ -1,19 +1,9 @@
-from flask import Flask, render_template, request, redirect, url_for
+@app.teardown_appcontext
+def close_db(exception):
+    db = g.pop('db', None)
+    if db is not None:
+        db.close()
 
-app = Flask(__name__)
-
-posts = [
-    {
-        'id': 0,
-        'title': 'First Post',
-        'content': 'This is the first blog post.'
-    },
-    {
-        'id': 1,
-        'title': 'Second Post',
-        'content': 'This is the second blog post.'
-    }
-]
 
 @app.route("/")
 def home():
